@@ -14,7 +14,7 @@ plotData <- subset(myData, myData$Date >= "2007-02-01" & myData$Date <= "2007-02
 plotData <- transform(plotData, DateTime=as.POSIXct(paste(plotData$Date, plotData$Time)))
 
 #Make plot
-png(file = "plot2.png", width = 480, height = 480)
+png(file = "plot2.png", bg = "transparent", width = 480, height = 480)
 plot(x=plotData$DateTime, y=as.numeric(plotData$Global_active_power), type="l", xlab="", ylab="Global Active Power (kilowatts)")
 dev.off()
 
